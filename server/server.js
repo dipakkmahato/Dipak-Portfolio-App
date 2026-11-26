@@ -13,7 +13,7 @@ const port = process.env.PORT || 5000;
 //Middlewares
 app.use(
     cors({
-        origin:"http://localhost:5173",
+        origin: ["http://localhost:5173", "https://dipak-singh-psi.vercel.app"]
     }),
 );
 app.use(express.json());

@@ -154,7 +154,7 @@ const AdminLoader = ({ isVisible = true, label = 'Loading Admin Panel' }) => {
                   repeat: Infinity,
                   ease: 'easeInOut',
                 }}
-                className="h-full w-1/2 rounded-full bg-gradient-to-r from-indigo-500 via-sky-400 to-indigo-500"
+                className="h-full w-1/2 rounded-full `bg-gradient-to-r` from-indigo-500 via-sky-400 to-indigo-500"
               />
             </div>
 

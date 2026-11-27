@@ -16,10 +16,15 @@
         },
         setLoading: (state, action) => {
             state.loading = action.payload;
-        }
+        },
+        logout: (state) => {
+            state.userData = null;
+            state.token = null;
+            state.loading = false;
+        },
     },
  });
 
  export default userSlice.reducer;
 
- export const {setUserData, setToken, setLoading } = userSlice.actions;
+ export const {setUserData, setToken, setLoading, logout } = userSlice.actions;

@@ -15,6 +15,59 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    // Extra details to edit profile
+    phone: {
+        type: String,
+    },
+    whatsappNumber: {
+        type: String,
+    },
+    address: {
+        type: String,
+    },
+    city: {
+        type: String,
+    },
+    state: {
+        type: String,
+    },
+    country:{
+        type: String,
+    },
+    title: {
+        type: String,
+    },
+    intro: {
+        type: String,
+    },
+    description: {
+       type: String,
+    },
+    github: {
+        type: String,
+    },
+    linkedin: {
+        type: String,
+    },
+    facebook: {
+        type: String,
+    },
+    instagram: {
+        type: String,
+    },
+    twitter: {
+        type: String,
+    },
+    youtube: {
+        type: String,
+    },
+    profilePic: {
+        type: String,
+    },
+    isAvailable: {
+        type: Boolean,
+        default: true,
+    },
 });
 
 const UserModel = mongoose.models.user || mongoose.model("User", userSchema);

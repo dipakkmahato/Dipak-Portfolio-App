@@ -9,15 +9,18 @@ const Skills = () => {
   const [skillName, setSkillName] = useState("");
   const [loading, setLoading] = useState(false);
   const serverUrl = import.meta.env.VITE_SERVER_URL;
+
   const handleFileChange = (e) => {
     const file = e.target.files?.[0];
     setSkillImage(file);
     setPreviewImage(URL.createObjectURL(file));
   };
 
+
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if(!skillName, !skillLevel){
+    if((!skillName, !skillLevel)){
       toast.error("Please fill all the fields");
     }
     setLoading(true);

@@ -16,41 +16,42 @@ export const addSkill = async (req, res) => {
         .status(404)
         .json({success: false, message: "User not found!" });
     }
-    // if (!req.file) {
-    //     return res
-    //     .status(400)
-    //     .json({success: false, message: "Please upload a file" });
-    // }
-    // try {
-    //     skillImage = await uploadOnCloudinary(
-    //         req.file.buffer,
-    //         "portfolio-skills"
-    //     );
-    // } catch (error) {
-    //     console.log(error, "error in image upload");
-    //     return res
-    //     .status(500)
-    //     .json({ success: false, message: " Image upload failed!"})
-    // }
 
     if (!req.file) {
-  return res.status(400).json({
-    success: false,
-    message: "Please upload a skill image!"
-  });
-}
+        return res
+        .status(400)
+        .json({success: false, message: "Please upload a file" });
+    }
+    try {
+        skillImage = await uploadOnCloudinary(
+            req.file.buffer,
+            "portfolio-skills"
+        );
+    } catch (error) {
+        console.log(error, "error in image upload");
+        return res
+        .status(500)
+        .json({ success: false, message: " Image upload failed!"})
+    }
 
-skillImage = await uploadOnCloudinary(
-  req.file.buffer,
-  "portfolio-skills"
-);
+//     if (!req.file) {
+//   return res.status(400).json({
+//     success: false,
+//     message: "Please upload a skill image!"
+//   });
+// }
 
-if (!skillImage) {
-  return res.status(500).json({
-    success: false,
-    message: "Image upload failed!"
-  });
-}
+// skillImage = await uploadOnCloudinary(
+//   req.file.buffer,
+//   "portfolio-skills"
+// );
+
+// if (!skillImage) {
+//   return res.status(500).json({
+//     success: false,
+//     message: "Image upload failed!"
+//   });
+// }
 
     const skill = await skillModel.create({
         userId,

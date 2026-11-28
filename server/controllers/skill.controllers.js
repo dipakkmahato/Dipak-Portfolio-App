@@ -16,13 +16,6 @@ export const addSkill = async (req, res) => {
         .status(404)
         .json({success: false, message: "User not found!" });
     }
-    if (!skillName || Number.isNaN(skillLevel) || skillLevel < 0 || skillLevel > 100) {
-     return res.status(400).json({
-      success: false,
-      message: "Please provide valid skill name and skill level!"
-    });
-    }
-
     // if (!req.file) {
     //     return res
     //     .status(400)

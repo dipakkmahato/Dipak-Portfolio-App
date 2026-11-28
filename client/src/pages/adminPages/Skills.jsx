@@ -17,6 +17,9 @@ const Skills = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if(!skillName, !skillLevel){
+      toast.error("Please fill all the fields");
+    }
     setLoading(true);
     try {
       const formData = new FormData();
@@ -77,4 +80,4 @@ const Skills = () => {
   );
 };
 
-export default Skills;
+export default Skills; 

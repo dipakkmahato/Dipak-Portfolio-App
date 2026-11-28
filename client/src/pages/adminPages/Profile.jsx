@@ -171,7 +171,7 @@ const Profile = () => {
         toast.success(
           response.data.message || "Profile updated successfully!"
         );
-        console.log("update profile:", response.data.user);
+        //console.log("update profile:", response.data.user);
       } else {
         toast.error(response?.data?.message || "Profile update failed");
       }
